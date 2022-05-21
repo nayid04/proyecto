@@ -11,6 +11,10 @@ public class CuentaBancaria {
     private Usuario titular;
     
     public CuentaBancaria(){
+        this.noCuenta=0;
+        this.tipoCuenta="";
+        this.saldoInicial=0.0;
+        this.saldo=0.0;
         this.titular = new Usuario();
     }
 
@@ -58,14 +62,22 @@ public class CuentaBancaria {
     }
     
     //--------------------------------------
-    public void setTitular(Scanner sc){
-        
-        System.out.print("Digite la cédula del titular: ");titular.setCc(sc.nextLine());
-        System.out.print("Digite el nombre del titular: ");titular.setNombre(sc.nextLine());
-        System.out.print("Digite el apellido del titular: ");titular.setApellido(sc.nextLine());
-        System.out.print("Digite el sexo: ");titular.setSexo(sc.nextLine().charAt(0));
+    public void setTitular(){
+        Scanner salida = new Scanner(System.in);
+        System.out.print("Digite la cédula del titular: ");
+        titular.setCc(salida.nextLine());
+        System.out.print("Digite el nombre del titular: ");
+        titular.setNombre(salida.next());
+        System.out.print("Digite el apellido del titular: ");
+        titular.setApellido(salida.next());
+        System.out.print("Digite el sexo: ");
+        titular.setSexo(salida.next().charAt(0));
     }
-    public Usuario getTitular(){return this.titular;}
-    
+    public void getTitular(){
+        System.out.println("Cédula del titular: "+titular.getCc());
+        System.out.println("Nombre del titular: "+titular.getNombre());
+        System.out.println("Apellido del titular: "+titular.getApellido());
+        System.out.println("Sexo: "+titular.getSexo());
+    }
     
 }

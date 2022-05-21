@@ -8,7 +8,9 @@ public class Usuario {
     private char sexo;
     
     public Usuario(){
-        
+        this.cc="";
+        this.nombre="";
+        this.apellido="";
     }
 
     public Usuario(String cc, String nombre, String apellido, char sexo) {
